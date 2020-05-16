@@ -4,6 +4,13 @@
 ## Introduction
 This is a management system, which is a web development practice project based on SSM(Spring+SpringMVC+Mybatis). 项目。。。功能。
 
+## 运行环境和所需工具
+1. 编译器：IntelliJ IDEA
+2. 项目构建工具：Maven
+3. 数据库：Mysql
+4. JDK版本：jdk1.8
+5. Tomcat版本：Tomcat9.x
+
 ## 技术栈
 1. IOC容器：Spring
 2. Web框架：SpringMVC
@@ -28,4 +35,6 @@ This is a management system, which is a web development practice project based o
 2. 把中文删除了
 3. 删、补、改注释
 4. 增加其他技术（SpringBoot,SpringSecurity,Shiro,Redis, Nignx,富文本编辑）
-5. 可以增加结构图等
+5. 可以增加结构图、截图等
+6. 项目配置到云上面
+7. （四海兴唐框架整合+三阶段知识点）+（zhang13专栏+源码）+（zhang13SpringBoot知识+源码）+（其他项目代码）+（优达4）
