@@ -2,7 +2,7 @@
 
 
 ## Introduction
-This is a management system, which is a web development practice project based on SSM(Spring+SpringMVC+Mybatis). 项目。。。功能。
+这是一个基于SSM的权限管理系统，用户可以管理、分配权限。。。。
 
 ## 运行环境和所需工具
 1. 编译器：IntelliJ IDEA
@@ -30,11 +30,10 @@ This is a management system, which is a web development practice project based o
 
 
 ## 要补的东西
-0. 还有五个问题
-1. 把功能补全(还得加登陆页面和mvc的拦截器等三阶段各种知识点)
+1. 把功能补全(批量删除、最后加异常界面)
 2. 把中文删除了
 3. 删、补、改注释
-4. 增加其他技术（SpringBoot,SpringSecurity,Shiro,Redis, Nignx,富文本编辑）
+4. 增加其他技术（SpringBoot, SpringSecurity/Shiro, Redis, Nignx,富文本编辑）
 5. 可以增加结构图、截图等
 6. 项目配置到云上面
 7. （四海兴唐框架整合+三阶段知识点）+（zhang13专栏+源码）+（zhang13SpringBoot知识+源码）+（其他项目代码）+（优达4）
