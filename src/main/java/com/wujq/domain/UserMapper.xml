@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wujq.mapper.UserMapper" >
+    <resultMap id="BaseResultMap" type="com.wujq.domain.User" >
+        <id column="user_id" property="user_id" jdbcType="INTEGER" />
+        <result column="user_name" property="user_name" jdbcType="VARCHAR" />
+        <result column="user_account" property="user_account" jdbcType="VARCHAR" />
+        <result column="user_password" property="user_password" jdbcType="VARCHAR" />
+        <result column="user_status" property="user_status" jdbcType="INTEGER" />
+        <result column="fk_role_id" property="fk_role_id" jdbcType="INTEGER" />
+        <result column="user_img" property="user_img" jdbcType="VARCHAR" />
+        <association property="role" column="fk_role_id" select="com.wujq.mapper.RoleMapper.load"></association>
+    </resultMap>
+    <sql id="user_columns" >
+        user_id, user_name, user_account, user_password, user_status, fk_role_id, user_img
+    </sql>
+    <select id="load" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select
+        <include refid="user_columns" />
+        from user
+        where user_id = #{user_id,jdbcType=INTEGER}
+    </select>
+    <delete id="delete" parameterType="java.lang.Integer" >
+        delete from user
+        where user_id = #{user_id,jdbcType=INTEGER}
+    </delete>
+    <insert id="add" parameterType="com.wujq.domain.User" >
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="user_id != null" >
+                user_id,
+            </if>
+            <if test="user_name != null" >
+                user_name,
+            </if>
+            <if test="user_account != null" >
+                user_account,
+            </if>
+            <if test="user_password != null" >
+                user_password,
+            </if>
+            <if test="user_status != null" >
+                user_status,
+            </if>
+            <if test="fk_role_id != null" >
+                fk_role_id,
+            </if>
+            <if test="user_img != null" >
+                user_img,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="user_id != null" >
+                #{user_id,jdbcType=INTEGER},
+            </if>
+            <if test="user_name != null" >
+                #{user_name,jdbcType=VARCHAR},
+            </if>
+            <if test="user_account != null" >
+                #{user_account,jdbcType=VARCHAR},
+            </if>
+            <if test="user_password != null" >
+                #{user_password,jdbcType=VARCHAR},
+            </if>
+            <if test="user_status != null" >
+                #{user_status,jdbcType=INTEGER},
+            </if>
+            <if test="fk_role_id != null" >
+                #{fk_role_id,jdbcType=INTEGER},
+            </if>
+            <if test="user_img != null" >
+                #{user_img,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="update" parameterType="com.wujq.domain.User" >
+        update user
+        <set >
+            <if test="user_name != null" >
+                user_name = #{user_name,jdbcType=VARCHAR},
+            </if>
+            <if test="user_account != null" >
+                user_account = #{user_account,jdbcType=VARCHAR},
+            </if>
+            <if test="user_password != null" >
+                user_password = #{user_password,jdbcType=VARCHAR},
+            </if>
+            <if test="user_status != null" >
+                user_status = #{user_status,jdbcType=INTEGER},
+            </if>
+            <if test="fk_role_id != null" >
+                fk_role_id = #{fk_role_id,jdbcType=INTEGER},
+            </if>
+            <if test="user_img != null" >
+                user_img = #{user_img,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where user_id = #{user_id,jdbcType=INTEGER}
+    </update>
+    <select id="userList" parameterType="map" resultMap="BaseResultMap">
+        select * from user
+        <where>
+            <if test="user.user_name != null and user.user_name != ''">
+                and user_name like concat ('%',#{user.user_name},'%')
+            </if>
+            <if test="user.user_account != null and user.user_account != ''">
+                and user_account like concat ('%',#{user.user_account},'%')
+            </if>
+        </where>
+        limit #{beg},#{num}
+    </select>
+    <select id="count" parameterType="map" resultType="integer">
+        select count(*) from user
+        <where>
+            <if test="user.user_name != null and user.user_name != ''">
+                and user_name like concat ('%',#{user.user_name},'%')
+            </if>
+            <if test="user.user_account != null and user.user_account != ''">
+                and user_account like concat ('%',#{user.user_account},'%')
+            </if>
+        </where>
+    </select>
+</mapper>
