@@ -3,7 +3,11 @@ package com.wujq.service.impl;
 import java.util.List;
 import java.util.Map;
 
+import com.wujq.domain.Menu;
+import com.wujq.domain.Rlm;
 import com.wujq.domain.Role;
+import com.wujq.mapper.MenuMapper;
+import com.wujq.mapper.RlmMapper;
 import com.wujq.mapper.RoleMapper;
 import com.wujq.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +18,10 @@ import com.wujq.util.PageBean;
 public class RoleServiceImpl implements RoleService {
 	@Autowired
 	private RoleMapper roleMapper;
+	@Autowired
+	private RlmMapper rlmMapper;
+	@Autowired
+	private MenuMapper menuMapper;
 	@Override
 	public Map<String, Object> roleList(Map<String, Object> map) {
 		List<Role> roleList = roleMapper.roleList(map);
@@ -59,5 +67,22 @@ public class RoleServiceImpl implements RoleService {
 	public List<Role> roleAllList() {
 		return roleMapper.roleAllList();
 	}
-
+	@Override
+	public Map<String, Object> menuMdi(Map<String, Object> map, Integer role_id) {
+		List<Rlm> havList = rlmMapper.havList(role_id);
+		map.put("havList", havList);
+		List<Menu> noList = menuMapper.noList(role_id);
+		map.put("noList", noList);
+		return map;
+	}
+	@Override
+	public Map<String, Object> menuMdiDo(Map<String, Object> map) {
+		rlmMapper.menuDel(map);
+		Integer[] fk_menu_ids = (Integer[])map.get("fk_menu_ids");
+		if(fk_menu_ids!=null&&fk_menu_ids.length>0){
+			rlmMapper.menuAdd(map);
+		}
+		map.put("message", "分配成功");
+		return map;
+	}
 }

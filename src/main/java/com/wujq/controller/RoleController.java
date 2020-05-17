@@ -29,7 +29,7 @@ public class RoleController {
 	}
 	@RequestMapping("/roleAdd")
 	public String roleAdd(){
-		
+
 		return "role/roleAdd";
 	}
 	@RequestMapping("/roleAddDo")
@@ -56,6 +56,19 @@ public class RoleController {
 	@RequestMapping("/roleDelDo")
 	public String roleDelDo(Integer role_id,Map<String, Object> map){
 		roleService.roleDel(role_id, map);
+		return "main/message";
+	}
+	@RequestMapping("/menuMdi")
+	public String menuMdi(Integer role_id,Map<String,Object> map){
+		roleService.menuMdi(map, role_id);
+		map.put("role_id", role_id);
+		return "menu/menuMdi";
+	}
+	@RequestMapping("/menuMdiDo")
+	public String menuMdiDo(Integer role_id,Map<String,Object> map,Integer[] selectR){
+		map.put("fk_role_id", role_id);
+		map.put("fk_menu_ids", selectR);
+		roleService.menuMdiDo(map);
 		return "main/message";
 	}
 }

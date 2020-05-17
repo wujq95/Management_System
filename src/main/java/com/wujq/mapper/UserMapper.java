@@ -17,4 +17,7 @@ public interface UserMapper {
     List<User> userList(Map<String, Object> map);
     //查询数量
     int count(Map<String, Object> map);
+    //登录
+    User login(Map<String, Object> map);
+
 }

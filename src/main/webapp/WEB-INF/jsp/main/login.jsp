@@ -37,6 +37,7 @@
         <hr class="hr15">
         <input name="user_password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
         <hr class="hr15">
+        <font color="red">密码错误</font>
         <hr class="hr15">
         <input value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
         <hr class="hr20" >
@@ -48,7 +49,7 @@
         layui.use('form', function(){
             var form = layui.form;
 
-            form.on('submit(index)', function(data){
+            form.on('submit(login)', function(data){
                 form.submit();
                 return false;
             });

@@ -39,10 +39,11 @@ public class UserController {
 		return "user/userAdd";
 	}
 	@RequestMapping("/userAddDo")
-	public String userAddDo(User user,MultipartFile photo,Map<String, Object> map) throws IllegalStateException, IOException{
+	public String userAddDo(User user,MultipartFile photo,Map<String, Object> map,HttpServletRequest request) throws IllegalStateException, IOException{
 		if(photo!=null&&photo.getOriginalFilename()!=null&&photo.getOriginalFilename()!=""){
+
 			//定义文件上传路径
-			String path = "upload";
+			String path = request.getSession().getServletContext().getRealPath("upload");
 			//获取文件名
 			String realName = photo.getOriginalFilename();
 			//获取后缀
@@ -50,9 +51,10 @@ public class UserController {
 			//生成新的文件名
 			String newName = UUID.randomUUID().toString().replaceAll("-", "")+"."+ext;
 			//建立一个空文件
-			File file = new File(path+"/"+newName);
+			File targetFile = new File(path, newName);
+
 			//将文件写入空文件
-			photo.transferTo(file);
+			photo.transferTo(targetFile);
 			user.setUser_img(newName);
 		}
 		userService.userAdd(user, map);
@@ -67,10 +69,10 @@ public class UserController {
 		return "user/userMdi";
 	}
 	@RequestMapping("/userMdiDo")
-	public String userMdiDo(User user,MultipartFile photo,Map<String, Object> map) throws IllegalStateException, IOException {
+	public String userMdiDo(User user,MultipartFile photo,Map<String, Object> map,HttpServletRequest request) throws IllegalStateException, IOException{
 		if(photo!=null&&photo.getOriginalFilename()!=null&&photo.getOriginalFilename()!=""){
 			//定义文件上传路径
-			String path = "upload";
+			String path = request.getSession().getServletContext().getRealPath("upload");
 			//获取文件名
 			String realName = photo.getOriginalFilename();
 			//获取后缀
@@ -78,9 +80,10 @@ public class UserController {
 			//生成新的文件名
 			String newName = UUID.randomUUID().toString().replaceAll("-", "")+"."+ext;
 			//建立一个空文件
-			File file = new File(path+"/"+newName);
+			File targetFile = new File(path, newName);
+
 			//将文件写入空文件
-			photo.transferTo(file);
+			photo.transferTo(targetFile);
 			user.setUser_img(newName);
 		}
 		userService.userMdi(user, map);
