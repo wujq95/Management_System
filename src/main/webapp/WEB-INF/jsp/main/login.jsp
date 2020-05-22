@@ -29,7 +29,7 @@
 <body class="login-bg">
 
 <div class="login">
-    <div class="message">管理员登录#</div>
+    <div class="message">管理员登录</div>
     <div id="darkbannerwrap"></div>
 
     <form method="post" action="loginDo" class="layui-form" >
