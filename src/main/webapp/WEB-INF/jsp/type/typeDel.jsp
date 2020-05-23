@@ -34,8 +34,8 @@
   </head>
 
     <body>
-    <form action="roleDelDo" method="post">
-        <input type="hidden" name="role_id" value="${role_id }">
+    <form action="typeDelDo" method="post">
+        <input type="hidden" name="type_id" value="${type_id }">
         <br /><br /><br /><br /><br /><br /><br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

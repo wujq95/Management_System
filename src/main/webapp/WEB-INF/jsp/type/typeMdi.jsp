@@ -15,7 +15,7 @@
     <title>*****</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,role-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <meta name="viewport" content="width=device-width,type-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/xadmin.css">
@@ -27,27 +27,26 @@
 
     <body>
     <div class="x-body">
-        <form action="roleAddDo" method="post" enctype="multipart/form-data" class="layui-form">
+        <form action="typeMdiDo" method="post" enctype="multipart/form-data" class="layui-form">
+            <input type="hidden" name="type_id" value="${type.type_id }">
 
             <div class="layui-form-item">
-                <label for="role_name" class="layui-form-label">
+                <label for="type_name" class="layui-form-label">
                     <span class="x-red">*</span>角色名
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="role_name" name="role_name" required="" lay-verify="required"
+                    <input type="text" id="type_name" value="${type.type_name }" name="type_name" required="" lay-verify="required"
                            autocomplete="off" class="layui-input">
                 </div>
 
             </div>
 
 
-
-
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
                 </label>
                 <button  class="layui-btn" lay-filter="add" lay-submit="">
-                    增加
+                    修改
                 </button>
             </div>
         </form>

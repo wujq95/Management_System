@@ -108,4 +108,10 @@ public class UserController {
 		userService.delAll(ids);
 		return "main/message";
 	}
+
+	@RequestMapping("/mainUserMdi")
+    public String mainUserMdi(){
+	    System.out.println("待修改！！！！");
+	    return "main/message";
+    }
 }

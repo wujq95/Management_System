@@ -27,7 +27,7 @@
 
     <body>
     <div class="x-body">
-        <form action="back/roleMdiDo" method="post" enctype="multipart/form-data" class="layui-form">
+        <form action="roleMdiDo" method="post" enctype="multipart/form-data" class="layui-form">
             <input type="hidden" name="role_id" value="${role.role_id }">
 
             <div class="layui-form-item">

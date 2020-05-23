@@ -15,7 +15,7 @@
     <title>*****</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,role-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <meta name="viewport" content="width=device-width,type-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/xadmin.css">
@@ -26,50 +26,39 @@
 <link href="artDialog/css/ui-dialog.css" rel="stylesheet"
     type="text/css" />
     <script type="text/javascript">
-    	function roleAdd() {
+    	function typeAdd() {
     		var d = top.dialog({
     		    title: '添加角色',
     		    width:600,
-    		    url: 'roleAdd',
+    		    url: 'typeAdd',
     		    onclose:function(){
     		    	window.location.reload();
     		    }
     		});
     		d.showModal();
 		}
-    	function roleMdi(role_id) {
+    	function typeMdi(type_id) {
     		var d = top.dialog({
     		    title: '修改角色',
     		    width:600,
-    		    url: 'roleMdi?role_id='+role_id,
+    		    url: 'typeMdi?type_id='+type_id,
     		    onclose:function(){
     		    	window.location.reload();
     		    }
     		});
     		d.showModal();
 		}
-    	function roleDel(role_id) {
+    	function typeDel(type_id) {
     		var d = top.dialog({
     		    title: '删除角色',
     		    width:600,
-    		    url: 'roleDel?role_id='+role_id,
+    		    url: 'typeDel?type_id='+type_id,
     		    onclose:function(){
     		    	window.location.reload();
     		    }
     		});
     		d.showModal();
 		}
-        function menuMdi(role_id) {
-            var d = top.dialog({
-                title: '分配权限',
-                width:600,
-                url: 'menuMdi?role_id='+role_id,
-                onclose:function(){
-                    window.location.reload();
-                }
-            });
-            d.showModal();
-        }
     </script>
   </head>
 
@@ -86,40 +75,27 @@
     </div>
     <div class="x-body">
         <div class="layui-row">
-            <form class="layui-form layui-col-md12 x-so" action="roleList" method="post">
-                <!-- <input class="layui-input" placeholder="开始日" name="start" id="start">
-                <input class="layui-input" placeholder="截止日" name="end" id="end"> -->
-                <input type="text" name="role_name"  placeholder="请输入角色名" autocomplete="off" class="layui-input" value="${role.role_name }">
+            <form class="layui-form layui-col-md12 x-so" action="typeList" method="post">
+                <input type="text" name="type_name"  placeholder="请输入角色名" autocomplete="off" class="layui-input" value="${type.type_name }">
                 <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
             </form>
         </div>
         <xblock>
-            <%--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>--%>
-            <button class="layui-btn" onclick="roleAdd()"><i class="layui-icon"></i>添加</button>
+            <button class="layui-btn" onclick="typeAdd()"><i class="layui-icon"></i>添加</button>
             <span class="x-right" style="line-height:40px">共有数据：${count }条</span>
         </xblock>
         <table class="layui-table">
             <thead>
             <tr>
-                <th>
-                    <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
-                </th>
-                <td>角色名</td>
+                <td>类别名</td>
                 <th>操作</th>
             </thead>
             <tbody>
-            <c:forEach items="${roleList }" var="role">
+            <c:forEach items="${typeList }" var="type">
                 <tr>
-                    <td>
-                        <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-                    </td>
-                    <td>${role.role_name }</td>
+                    <td>${type.type_name }</td>
                     <td class="td-manage">
-                        <button class="layui-btn" onclick="menuMdi(${role.role_id})">分配权限</button>
-                        <a title="编辑"  onclick="roleMdi(${role.role_id})" href="javascript:;">
-                            <i class="layui-icon">&#xe642;</i>
-                        </a>
-                        <a title="删除" onclick="roleDel(${role.role_id})" href="javascript:;">
+                        <a title="删除" onclick="typeDel(${type.type_id})" href="javascript:;">
                             <i class="layui-icon">&#xe640;</i>
                         </a>
                     </td>

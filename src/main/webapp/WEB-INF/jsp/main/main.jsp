@@ -27,6 +27,19 @@
     <script type="text/javascript" src="artDialog/dist/dialog-plus.js"></script>
     <link href="artDialog/css/ui-dialog.css" rel="stylesheet"
           type="text/css" />
+    <script type="text/javascript">
+        function userMdi(user_id) {
+            var d = top.dialog({
+                title: '修改员工',
+                width:600,
+                url: 'mainUserMdi?user_id='+user_id,
+                onclose:function(){
+                    window.location.reload();
+                }
+            });
+            d.showModal();
+        }
+    </script>
 </head>
 <body>
 <!-- 顶部开始 -->
@@ -41,7 +54,7 @@
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
                 <dd><a onclick="x_admin_show('资讯','http://www.baidu.com')"><i class="iconfont">&#xe6a2;</i>资讯</a></dd>
                 <dd><a onclick="x_admin_show('图片','http://www.baidu.com')"><i class="iconfont">&#xe6a8;</i>图片</a></dd>
-                <dd><a onclick="x_admin_show('用户','http://www.baidu.com')"><i class="iconfont">&#xe6b8;</i>用户</a></dd>
+                <dd><a onclick="userMdi(${sessionScope.user.user_id})"><i class="iconfont">&#xe6b8;</i>用户</a></dd>
             </dl>
         </li>
     </ul>
@@ -77,13 +90,10 @@
                                     <a _href="${rlm.menu.menu_url }">
                                         <i class="iconfont">&#xe6a7;</i>
                                         <cite>${rlm.menu.menu_name }</cite>
-
                                     </a>
                                 </li >
                             </c:if>
                         </c:forEach>
-
-
                     </ul>
                 </li>
             </c:forEach>
