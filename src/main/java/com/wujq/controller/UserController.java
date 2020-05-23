@@ -109,9 +109,9 @@ public class UserController {
 		return "main/message";
 	}
 
-	@RequestMapping("/mainUserMdi")
-    public String mainUserMdi(){
-	    System.out.println("待修改！！！！");
-	    return "main/message";
-    }
+
+	@RequestMapping("/userInfor")
+	public String userInfor(){
+		return "user/userInfor";
+	}
 }

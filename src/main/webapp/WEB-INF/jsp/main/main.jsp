@@ -27,19 +27,6 @@
     <script type="text/javascript" src="artDialog/dist/dialog-plus.js"></script>
     <link href="artDialog/css/ui-dialog.css" rel="stylesheet"
           type="text/css" />
-    <script type="text/javascript">
-        function userMdi(user_id) {
-            var d = top.dialog({
-                title: '修改员工',
-                width:600,
-                url: 'mainUserMdi?user_id='+user_id,
-                onclose:function(){
-                    window.location.reload();
-                }
-            });
-            d.showModal();
-        }
-    </script>
 </head>
 <body>
 <!-- 顶部开始 -->
@@ -48,22 +35,11 @@
     <div class="left_open">
         <i title="展开左侧栏" class="iconfont">&#xe699;</i>
     </div>
-    <ul class="layui-nav left fast-add" lay-filter="">
-        <li class="layui-nav-item">
-            <a href="javascript:;">其他</a>
-            <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('资讯','http://www.baidu.com')"><i class="iconfont">&#xe6a2;</i>资讯</a></dd>
-                <dd><a onclick="x_admin_show('图片','http://www.baidu.com')"><i class="iconfont">&#xe6a8;</i>图片</a></dd>
-                <dd><a onclick="userMdi(${sessionScope.user.user_id})"><i class="iconfont">&#xe6b8;</i>用户</a></dd>
-            </dl>
-        </li>
-    </ul>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
             <a href="javascript:;">${sessionScope.user.user_name}</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
-                <dd><a href="logout">切换帐号</a></dd>
+                <dd><a onclick="x_admin_show('个人信息','userInfor',600,300)">个人信息</a></dd>
                 <dd><a href="logout">退出</a></dd>
             </dl>
         </li>

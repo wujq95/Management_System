@@ -102,8 +102,6 @@
     <div class="x-body">
         <div class="layui-row">
             <form class="layui-form layui-col-md12 x-so" action="userList" method="post">
-                <!-- <input class="layui-input" placeholder="开始日" name="start" id="start">
-                <input class="layui-input" placeholder="截止日" name="end" id="end"> -->
                 <input type="text" name="user_name"  placeholder="请输入用户名" autocomplete="off" class="layui-input" value="${user.user_name }">
                 <input type="text" name="user_account"  placeholder="请输入账号" autocomplete="off" class="layui-input" value="${user.user_account }">
                 <button class="layui-btn"  lay-submit="" lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
