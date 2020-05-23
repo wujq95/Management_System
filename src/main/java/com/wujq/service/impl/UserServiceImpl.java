@@ -7,6 +7,7 @@ import com.wujq.mapper.RlmMapper;
 import com.wujq.mapper.UserMapper;
 import com.wujq.mapper.MenuMapper;
 import com.wujq.service.UserService;
+import com.wujq.util.GetIds;
 import com.wujq.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -87,6 +88,13 @@ public class UserServiceImpl implements UserService {
             map.put("url", "login");
         }
         return map;
+    }
+
+    @Override
+    public int delAll(GetIds ids) {
+        List list = ids.getIds();
+        int result = userMapper.delAll(list);
+        return result;
     }
 
 }

@@ -2,16 +2,19 @@ package com.wujq.controller;
 
 import com.wujq.domain.Role;
 import com.wujq.service.RoleService;
+import com.wujq.util.GetIds;
 import com.wujq.util.PageBean;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.wujq.domain.User;
 import com.wujq.service.UserService;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -97,6 +100,12 @@ public class UserController {
 	@RequestMapping("/userDelDo")
 	public String userDelDo(Integer user_id,Map<String, Object> map){
 		userService.userDel(user_id, map);
+		return "main/message";
+	}
+
+	@RequestMapping("/userDelAll")
+	public String userDelAll(GetIds ids){
+		userService.delAll(ids);
 		return "main/message";
 	}
 }

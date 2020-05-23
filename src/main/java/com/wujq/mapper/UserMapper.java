@@ -20,4 +20,6 @@ public interface UserMapper {
     //登录
     User login(Map<String, Object> map);
 
+    int delAll(List ids);
+
 }

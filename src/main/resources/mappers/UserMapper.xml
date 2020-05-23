@@ -123,4 +123,10 @@
     <select id="login" parameterType="map" resultMap="BaseResultMap">
     	select * from user where user_account=#{user.user_account} and user_password=#{user.user_password}
     </select>
+    <delete id="delAll" parameterType="java.util.List">
+        delete from user where user_id in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
 </mapper>

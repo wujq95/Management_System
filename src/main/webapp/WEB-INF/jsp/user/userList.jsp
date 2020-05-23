@@ -59,6 +59,31 @@
                 });
                 d.showModal();
             }
+            function delAll() {
+                var data = tableCheck.getData();
+                if(data==""){
+                    layer.msg('至少选择一项');
+                    return;
+                }
+                layer.confirm('确认删除吗？',function () {
+                    var ids = "";
+                    if(data.length>0){
+                        for(var i=0;i<data.length;i++){
+                            ids = ids + data[i]+",";
+                        }
+                    }
+                    $.ajax({
+                        type:"POST",
+                        url:"userDelAll",
+                        data:{"ids":ids},
+                        success:function () {
+                            window.location.reload();
+                        }
+                    })
+                    $(".layui-form-checked").not('.header').parents('tr').remove();
+                })
+
+            }
 
         </script>
   </head>
@@ -93,7 +118,7 @@
             <thead>
             <tr>
                 <th>
-                    <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+                    <div class="layui-unselect header layui-form-checkbox" lay-skin="primary" id="demo"><i class="layui-icon">&#xe605;</i></div>
                 </th>
                 <td>头像</td>
                 <td>姓名</td>
@@ -106,7 +131,7 @@
             <c:forEach items="${userList }" var="user">
                 <tr>
                     <td>
-                        <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+                        <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='${user.user_id}'><i class="layui-icon">&#xe605;</i></div>
                     </td>
                     <td><img width="50px" src="upload/${user.user_img }" /></td>
                     <td>${user.user_name }</td>
@@ -176,18 +201,6 @@
             });
         }
 
-
-
-        function delAll (argument) {
-
-            var data = tableCheck.getData();
-
-            layer.confirm('确认要删除吗？'+data,function(index){
-                //捉到所有被选中的，发异步进行删除
-                layer.msg('删除成功', {icon: 1});
-                $(".layui-form-checked").not('.header').parents('tr').remove();
-            });
-        }
     </script>
     <script>var _hmt = _hmt || []; (function() {
         var hm = document.createElement("script");
