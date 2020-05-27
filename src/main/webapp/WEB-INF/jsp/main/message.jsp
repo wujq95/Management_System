@@ -12,7 +12,7 @@
 	<head>
 		<base href="${basePath}">
 <meta charset="UTF-8">
-    <title>欢迎页面</title>
+    <title>Message Page</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -25,7 +25,7 @@
     type="text/css" />
     <script>
     function closes() {
-        var dialog = top.dialog.get(window);//获取当前模态窗口
+        var dialog = top.dialog.get(window);
         dialog.close();
         dialog.remove();
         return false;
@@ -34,17 +34,15 @@
   </head>
   
   <body>
-  <br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
   <font style="font-size: 40px;">${message }</font> 
   <br /><br /><br /><br /><br />
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <button class="layui-btn layui-btn-danger" onclick="closes()" type="button">关闭窗口</button>
+
+  <button class="layui-btn layui-btn-danger" onclick="closes()" type="button">Close Window</button>
   </body>
 
 </html>

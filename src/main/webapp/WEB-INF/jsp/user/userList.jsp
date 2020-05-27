@@ -118,12 +118,12 @@
                 <th>
                     <div class="layui-unselect header layui-form-checkbox" lay-skin="primary" id="demo"><i class="layui-icon">&#xe605;</i></div>
                 </th>
-                <td>头像</td>
-                <td>姓名</td>
-                <td>账号</td>
-                <td>角色</td>
+                <td>Profile Picture</td>
+                <td>Name</td>
+                <td>Account</td>
+                <td>Role</td>
                 <td>状态</td>
-                <th>操作</th>
+                <th>Operation</th>
             </thead>
             <tbody>
             <c:forEach items="${userList }" var="user">
@@ -135,7 +135,7 @@
                     <td>${user.user_name }</td>
                     <td>${user.user_account }</td>
                     <td>${user.role.role_name }</td>
-                    <td>${user.user_status eq 1 ? '在职' : '离职' }</td>
+                    <td>${user.user_status eq 1 ? 'In service' : 'Resignation' }</td>
                     <td class="td-manage">
                         <a title="编辑"  onclick="userMdi(${user.user_id})" href="javascript:;">
                             <i class="layui-icon">&#xe642;</i>
