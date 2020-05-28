@@ -1,7 +1,5 @@
 package com.wujq.util;
 
-import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +9,14 @@ import java.io.PrintWriter;
 
 public class SessionInterceptor extends HandlerInterceptorAdapter {
 
+    /**
+     * session interceptor for users who do not login
+     * @param request
+     * @param response
+     * @param handler
+     * @return
+     * @throws Exception
+     */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
