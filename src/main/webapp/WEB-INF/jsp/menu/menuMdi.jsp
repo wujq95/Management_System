@@ -34,7 +34,7 @@
 		.select_side{float:left; width:200px}
 		 select{width:200px; height:200px;border: 1px solid #404040;font-weight: bold}
 		.select_opt{float:left; width:40px; height:15%; padding-top: 80px;padding-left: 10px;}
-		.select_opt p{width:26px; height:26px; margin-top:6px; background:url(arr.gif) no-repeat; cursor:pointer; text-indent:-999em}
+		.select_opt p{width:26px; height:26px; margin-top:6px; background:url(images/arr.gif) no-repeat; cursor:pointer; text-indent:-999em}
 		.select_opt p#toright{background-position:2px 0}
 		.select_opt p#toleft{background-position:2px -22px}
 		.sub_btn{clear:both; height:42px; line-height:42px; padding-top:10px; text-align:center}
@@ -83,8 +83,8 @@ $(function(){
 			 </select>
 			 </div>
 			 <div class="select_opt">
-				<p id="toright" title="添加">&gt;</p>
-				<p id="toleft" title="移除">&lt;</p>
+				<p id="toright" title="add">&gt;</p>
+				<p id="toleft" title="remove">&lt;</p>
 			 </div>
 			 <div class="select_side">
 			 <p align="center">已拥有权限</p>
@@ -108,6 +108,5 @@ $(function(){
 			$("#form01").submit();
 		}
 	</script>
-
 </body>
 </html>

@@ -12,7 +12,7 @@
 	<head>
 		<base href="${basePath}">
 <meta charset="UTF-8">
-    <title>欢迎页面</title>
+    <title>Delete Confirm</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -25,7 +25,7 @@
     type="text/css" />
     <script>
     function closes() {
-        var dialog = top.dialog.get(window);//获取当前模态窗口
+        var dialog = top.dialog.get(window);
         dialog.close();
         dialog.remove();
         return false;
@@ -36,21 +36,16 @@
     <body>
     <form action="userDelDo" method="post">
         <input type="hidden" name="user_id" value="${user_id }">
-        <br /><br /><br /><br /><br /><br /><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <font style="font-size: 40px;">确认删除吗</font>
-        <br /><br /><br /><br /><br />
-
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="layui-btn layui-btn-danger" type="submit">确认</button>
-        <button class="layui-btn layui-btn-primay" onclick="closes()" type="button">取消</button>
+        <br/><br/><br/><br/>
+        <div align="center">
+            <div style="font-size: 40px">确认删除吗？</div>
+        </div>
+        <br/><br/><br/><br/>
+        <div align="center">
+            <button class="layui-btn layui-btn-danger" type="submit">确认</button>
+            <button class="layui-btn layui-btn-primay" onclick="closes()" type="button">取消</button>
+        </div>
+        <br/><br/>
     </form>
     </body>
 

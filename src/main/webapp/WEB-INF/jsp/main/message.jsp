@@ -21,8 +21,7 @@
     <script type="text/javascript" src="js/xadmin.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"  charset="UTF-8"></script>
 <script type="text/javascript" src="artDialog/dist/dialog-plus.js"></script>
-<link href="artDialog/css/ui-dialog.css" rel="stylesheet"
-    type="text/css" />
+<link href="artDialog/css/ui-dialog.css" rel="stylesheet" type="text/css" />
     <script>
     function closes() {
         var dialog = top.dialog.get(window);
@@ -30,19 +29,17 @@
         dialog.remove();
         return false;
     }
-</script>
+    </script>
   </head>
-  
   <body>
-  <br /><br /><br /><br /><br />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-  <font style="font-size: 40px;">${message }</font> 
-  <br /><br /><br /><br /><br />
-
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-  <button class="layui-btn layui-btn-danger" onclick="closes()" type="button">Close Window</button>
+      <br/><br/><br/><br/>
+      <div align="center">
+          <div style="font-size: 40px">${message}</div>
+      </div>
+      <br/><br/><br/><br/>
+      <div align="center">
+        <button class="layui-btn layui-btn-danger" onclick="closes()" type="button">Close Window</button>
+      </div>
   </body>
 
 </html>

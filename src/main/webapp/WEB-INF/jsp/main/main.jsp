@@ -86,7 +86,44 @@
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe src='welcome.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                <div class="x-body">
+                    <blockquote class="layui-elem-quote">Welcome ${sessionScope.user.user_name}!</blockquote>
+                    <fieldset class="layui-elem-field">
+                        <legend>Information</legend>
+                        <div class="layui-field-box">
+
+                            <table class="layui-table">
+                                <thead>
+                                <tr>
+                                    <th colspan="2" scope="col">User Information</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th width="30%">Profile Picture</th>
+                                    <td><img width="50px" src="upload/${sessionScope.user.user_img }"/></td>
+                                </tr>
+                                <tr>
+                                    <td>User Name</td>
+                                    <td>${sessionScope.user.user_name}</td>
+                                </tr>
+                                <tr>
+                                    <td>User Role</td>
+                                    <td>${sessionScope.user.role.role_name}</td>
+                                </tr>
+                                <tr>
+                                    <td>User Account</td>
+                                    <td>${sessionScope.user.user_account}</td>
+                                </tr>
+                                <tr>
+                                    <td>User Status </td>
+                                    <td>${sessionScope.user.user_status eq 1 ? 'In service' : 'Resignation' }</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                </div>
             </div>
         </div>
     </div>
