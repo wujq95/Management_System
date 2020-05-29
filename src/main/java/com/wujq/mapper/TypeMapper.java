@@ -11,11 +11,7 @@ public interface TypeMapper {
     int add(Type type);
     Type load(Integer type_id);
     int update(Type type);
-
     List<Type> typeList(Map<String, Object> map);
-
     int count(Map<String, Object> map);
-
     List<Type> typeAllList();
-
 }

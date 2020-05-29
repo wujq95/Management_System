@@ -138,7 +138,6 @@ public class UserController {
 		return "main/message";
 	}
 
-
 	/**
 	 * get user information
 	 * @return

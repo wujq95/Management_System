@@ -48,7 +48,6 @@
                 </div>
 
             </div>
-
             <div class="layui-form-item">
                 <label class="layui-form-label"><span class="x-red">*</span>Type</label>
                 <div class="layui-input-block">

@@ -8,14 +8,10 @@ import java.util.Map;
 public interface GoodMapper {
 
     int delete(Integer good_id);
-
     int add(Good good);
     Good load(Integer good_id);
     int update(Good good);
-
     List<Good> goodList(Map<String, Object> map);
-
     int count(Map<String, Object> map);
-
     int delAll(List ids);
 }
