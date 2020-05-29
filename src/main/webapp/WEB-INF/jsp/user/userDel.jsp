@@ -38,12 +38,12 @@
         <input type="hidden" name="user_id" value="${user_id }">
         <br/><br/><br/><br/>
         <div align="center">
-            <div style="font-size: 40px">确认删除吗？</div>
+            <div style="font-size: 40px">Confirm Delete？</div>
         </div>
         <br/><br/><br/><br/>
         <div align="center">
-            <button class="layui-btn layui-btn-danger" type="submit">确认</button>
-            <button class="layui-btn layui-btn-primay" onclick="closes()" type="button">取消</button>
+            <button class="layui-btn layui-btn-danger" type="submit">Confirm</button>
+            <button class="layui-btn layui-btn-primay" onclick="closes()" type="button">Cancel</button>
         </div>
         <br/><br/>
     </form>

@@ -17,26 +17,25 @@
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
         <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.RequestMapping"/>
     </context:component-scan>
-    <!-- 配置视图解析器的前缀和后缀 -->
+    <!-- configure the prefix and suffix of the view resolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="jspViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"></property>
         <property name="suffix" value=".jsp"></property>
-        <!--表单标签的支持-->
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
     </bean>
-    <!--排除静态资源的第一种方式-->
+    <!--exclude static resources-->
     <mvc:default-servlet-handler/>
-    <!--文件上传的配置-->
+    <!--configure upload files-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="defaultEncoding" value="UTF-8"></property>
         <property name="maxUploadSize" value="20971520"></property>
     </bean>
-    <!--拦截器的配置-->
+    <!--configure interceptor-->
     <mvc:interceptors>
         <mvc:interceptor>
-           <!-- 拦截路径-->
+           <!-- interceptor path-->
             <mvc:mapping path="/**"/>
-            <!--排除路径-->
+            <!--exclude path-->
             <mvc:exclude-mapping path="/login"/>
             <mvc:exclude-mapping path="/loginDo"/>
             <mvc:exclude-mapping path="/css/**"/>
@@ -46,7 +45,7 @@
             <mvc:exclude-mapping path="/lib/**"/>
             <mvc:exclude-mapping path="/upload/**"/>
             <mvc:exclude-mapping path="/artDialog/**"/>
-            <!--定义拦截器-->
+            <!--define interceptor-->
             <bean class="com.wujq.util.SessionInterceptor" id="interceptor01"></bean>
         </mvc:interceptor>
     </mvc:interceptors>

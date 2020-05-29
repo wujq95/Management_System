@@ -16,59 +16,56 @@
  http://www.springframework.org/schema/mvc
  http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-
-    <!-- 启动spring注解 -->
+    <!-- start spring annotation -->
     <context:annotation-config/>
-    <!-- 扫描注解所在的包 -->
+    <!-- scan the package of annotations -->
     <context:component-scan base-package="com.wujq">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
         <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.RequestMapping"/>
     </context:component-scan>
-    <!-- 启动aop注解 -->
+    <!-- start aop annotations -->
     <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
-    <!-- 加载属性文件 -->
+    <!-- load property files -->
     <context:property-placeholder location="classpath:/jdbc.properties"/>
-
-    <!--配置数据源-->
+    <!--configure data source-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
         <property name="driverClassName" value="${jdbc.mysql.driver}"/>
         <property name="url" value="${jdbc.mysql.url}"/>
         <property name="username" value="${jdbc.mysql.username}"/>
         <property name="password" value="${jdbc.mysql.password}"/>
     </bean>
-
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
-        <!--加载mybatis核心配置文件-->
+        <!--load mybatis core configure file-->
         <property name="configLocation" value="classpath:/mybatis-config.xml"></property>
-        <!--加载映射文件-->
+        <!--load mapper files-->
         <property name="mapperLocations" value="classpath*:/mappers/*Mapper.xml"></property>
-        <!--配置mybatis数据源-->
+        <!--configure mybatis data source-->
         <property name="dataSource" ref="dataSource"></property>
     </bean>
-    <!--接口代理的配置-->
+    <!--configure interface proxy-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.wujq.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"></property>
     </bean>
-    <!--配置事务管理器-->
+    <!--configure datasource transaction-->
     <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
-        <!--配置数据源-->
+        <!--configure data source-->
         <property name="dataSource" ref="dataSource"></property>
     </bean>
-    <!--启动事务管理器注解模式-->
+    <!--start datasource transaction annotation method-->
     <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
-    <!--通知哪些方法需要事务-->
+    <!--notify which methods need transaction-->
     <tx:advice id="methodAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="*"/>
         </tx:attributes>
     </tx:advice>
-    <!--通知哪个层次方法需要事务-->
+    <!--notify which layers need transaction-->
     <aop:config>
         <aop:pointcut id="serviceMethodPointcut" expression="execution(* com..service.*.*(..))"/>
         <aop:advisor advice-ref="methodAdvice" pointcut-ref="serviceMethodPointcut"></aop:advisor>
     </aop:config>
-    <!--实例化jdbcTemplate（可选）-->
+    <!--jdbcTemplate-->
     <bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate">
         <property name="dataSource" ref="dataSource"></property>
     </bean>

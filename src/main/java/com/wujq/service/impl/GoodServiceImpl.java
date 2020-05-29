@@ -1,18 +1,13 @@
 package com.wujq.service.impl;
 
 import com.wujq.domain.Good;
-import com.wujq.domain.User;
 import com.wujq.mapper.GoodMapper;
-import com.wujq.mapper.MenuMapper;
-import com.wujq.mapper.RlmMapper;
-import com.wujq.mapper.UserMapper;
 import com.wujq.service.GoodService;
 import com.wujq.util.GetIds;
 import com.wujq.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -21,12 +16,12 @@ public class GoodServiceImpl implements GoodService {
 
     @Autowired
     private GoodMapper goodMapper;
-    @Autowired
-    private RlmMapper rlmMapper;
-    @Autowired
-    private MenuMapper menuMapper;
 
-
+    /**
+     * check goods
+     * @param map
+     * @return
+     */
     @Override
     public Map<String, Object> goodList(Map<String, Object> map) {
         List<Good> goodList = goodMapper.goodList(map);
@@ -35,44 +30,72 @@ public class GoodServiceImpl implements GoodService {
         return map;
     }
 
+    /**
+     * goods add
+     * @param good
+     * @param map
+     * @return
+     */
     @Override
     public Map<String, Object> goodAdd(Good good, Map<String, Object> map) {
         int result = goodMapper.add(good);
         if(result>0){
-            map.put("message", "添加成功");
+            map.put("message", "successfully added");
         }else {
-            map.put("message", "添加失败");
+            map.put("message", "fail to add");
         }
         return map;
     }
 
+    /**
+     * goods load
+     * @param good_id
+     * @return
+     */
     @Override
     public Good load(Integer good_id) {
         return goodMapper.load(good_id);
     }
 
+    /**
+     * goods modify
+     * @param good
+     * @param map
+     * @return
+     */
     @Override
     public Map<String, Object> goodMdi(Good good, Map<String, Object> map) {
         int result = goodMapper.update(good);
         if(result>0){
-            map.put("message", "修改成功");
+            map.put("message", "successfully modified");
         }else {
-            map.put("message", "修改失败");
+            map.put("message", "fail to modify");
         }
         return map;
     }
 
+    /**
+     * goods delete
+     * @param good_id
+     * @param map
+     * @return
+     */
     @Override
     public Map<String, Object> goodDel(Integer good_id, Map<String, Object> map) {
         int result = goodMapper.delete(good_id);
         if(result>0){
-            map.put("message", "删除成功");
+            map.put("message", "successfully delete");
         }else {
-            map.put("message", "删除失败");
+            map.put("message", "fail to delete");
         }
         return map;
     }
 
+    /**
+     * multiple goods delete
+     * @param ids
+     * @return
+     */
     @Override
     public int delAll(GetIds ids) {
         List list = ids.getIds();

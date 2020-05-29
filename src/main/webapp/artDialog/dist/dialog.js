@@ -55,7 +55,6 @@ function Popup () {
 
 
     this.__popup = $('<div />')
-    /*使用 <dialog /> 元素可能导致 z-index 永远置顶的问题(chrome)*/
     .css({
         display: 'none',
         position: 'absolute',
@@ -83,8 +82,6 @@ function Popup () {
     });
 
 
-    // 使用 HTMLElement 作为外部接口使用，而不是 jquery 对象
-    // 统一的接口利于未来 Popup 移植到其他 DOM 库中
     this.node = this.__popup[0];
     this.backdrop = this.__backdrop[0];
 

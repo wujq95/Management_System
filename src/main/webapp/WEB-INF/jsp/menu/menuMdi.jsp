@@ -12,7 +12,7 @@
 	<head>
 		<base href="${basePath}">
 <meta charset="UTF-8">
-    <title>*****</title>
+    <title>Menu Modify</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,role-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -25,7 +25,7 @@
    <script type="text/javascript" src="artDialog/dist/dialog-plus.js"></script>
 <link href="artDialog/css/ui-dialog.css" rel="stylesheet"
     type="text/css" />
-    <title>分配权限</title>
+    <title>Assign Permissions</title>
 	<style type="text/css">
 		#main{
 			width: 500px;
@@ -72,10 +72,10 @@ $(function(){
 	<form id="form01" action="menuMdiDo" method="post">
 		<input type="hidden" name="role_id" value="${role_id }">
 		<div id="main">
-		  <h2 align="center">分配权限</h2>
+		  <h2 align="center">Assign Permissions</h2>
 		  <div class="demo">
 			 <div class="select_side">
-			 <p align="center">未拥有权限</p>
+			 <p align="center">Not Have Permissions</p>
 			 <select id="selectL" name="selectL" multiple="multiple">
 				 <c:forEach items="${noList }" var="menu">
 			 		<option value="${menu.menu_id }">${menu.menu_name }</option>
@@ -87,14 +87,14 @@ $(function(){
 				<p id="toleft" title="remove">&lt;</p>
 			 </div>
 			 <div class="select_side">
-			 <p align="center">已拥有权限</p>
+			 <p align="center">Already Have Permissions</p>
 			 <select id="selectR" name="selectR" multiple="multiple">
 			 	<c:forEach items="${havList }" var="rlm">
 			 		<option name="havs" value="${rlm.menu.menu_id }">${rlm.menu.menu_name }</option>
 			 	</c:forEach>
 			 </select>
 			 </div>
-			 <div class="sub_btn"><input type="button" onclick="subs()" id="sub" class="layui-btn" value="分配" /></div>
+			 <div class="sub_btn"><input type="button" onclick="subs()" id="sub" class="layui-btn" value="Assign" /></div>
 		  </div>
 	
 		</div>

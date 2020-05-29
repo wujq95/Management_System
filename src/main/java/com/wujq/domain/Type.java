@@ -18,6 +18,14 @@ public class Type {
         this.type_name = type_name;
     }
 
+    @Override
+    public String toString() {
+        return "Type{" +
+                "type_id=" + type_id +
+                ", type_name='" + type_name + '\'' +
+                '}';
+    }
+
     private Integer type_id;
     private String type_name;
 }

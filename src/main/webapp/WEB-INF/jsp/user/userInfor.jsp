@@ -9,7 +9,7 @@
 %>
 <html>
 <head>
-    <title>Title</title>
+    <title>User Information</title>
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/font.css">
@@ -24,24 +24,24 @@
 <body>
     <table class="layui-table" align="center">
         <tr align="center">
-            <td>头像</td>
+            <td>Portrait</td>
             <td><img width="50px" src="upload/${user.user_img }" /></td>
         </tr>
         <tr align="center">
-            <td>姓名</td>
+            <td>Name</td>
             <td>${user.user_name}</td>
         </tr>
         <tr align="center">
-            <td>账号</td>
+            <td>Account</td>
             <td>${user.user_account}</td>
         </tr>
         <tr align="center">
-            <td>角色</td>
+            <td>Role</td>
             <td>${user.role.role_name }</td>
         </tr>
         <tr align="center">
-            <td>状态</td>
-            <td>${user.user_status eq 1 ? '在职' : '离职' }</td>
+            <td>Status</td>
+            <td>${user.user_status eq 1 ? 'In service' : 'Resignation' }</td>
         </tr>
     </table>
 </body>
