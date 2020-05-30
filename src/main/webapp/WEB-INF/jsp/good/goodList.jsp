@@ -65,7 +65,7 @@
                 layer.msg('Please select at least one item');
                 return;
             }
-            layer.confirm('Confirm Delete？',{title:'Confirm',btn: ['yes', 'no']},function () {
+            layer.confirm('Confirm Deletion？',{title:'Confirm',btn: ['Confirm', 'Cancel']},function () {
                 var ids = "";
                 if(data.length>0){
                     for(var i=0;i<data.length;i++){
@@ -131,10 +131,10 @@
                     <td>${good.good_price}</td>
                     <td>${good.type.type_name }</td>
                     <td class="td-manage">
-                        <a title="编辑"  onclick="goodMdi(${good.good_id})" href="javascript:;">
+                        <a title="Modify"  onclick="goodMdi(${good.good_id})" href="javascript:;">
                             <i class="layui-icon">&#xe642;</i>
                         </a>
-                        <a title="删除" onclick="goodDel(${good.good_id})" href="javascript:;">
+                        <a title="Delete" onclick="goodDel(${good.good_id})" href="javascript:;">
                             <i class="layui-icon">&#xe640;</i>
                         </a>
                     </td>

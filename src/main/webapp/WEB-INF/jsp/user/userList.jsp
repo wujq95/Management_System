@@ -65,7 +65,7 @@
                     layer.msg('You should select at lease one item');
                     return;
                 }
-                layer.confirm('Confirm Delete？',{title:'Confirm',btn: ['yes', 'no']},function () {
+                layer.confirm('Confirm Deletion？',{title:'Confirm',btn: ['Confirm', 'Cancel']},function () {
                     var ids = "";
                     if(data.length>0){
                         for(var i=0;i<data.length;i++){
@@ -116,7 +116,7 @@
                     <th>
                         <div class="layui-unselect header layui-form-checkbox" lay-skin="primary" id="demo"><i class="layui-icon">&#xe605;</i></div>
                     </th>
-                    <td>Picture</td>
+                    <td>Portrait</td>
                     <td>Name</td>
                     <td>Account</td>
                     <td>Role</td>

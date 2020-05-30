@@ -83,7 +83,7 @@ public class TypeServiceImpl implements TypeService {
     public Map<String, Object> typeDel(Integer type_id, Map<String, Object> map) {
         int result = typeMapper.delete(type_id);
         if(result>0){
-            map.put("message", "successfully delete");
+            map.put("message", "successfully deleted");
         }else {
             map.put("message", "fail to delete");
         }

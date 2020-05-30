@@ -90,7 +90,7 @@ public class RoleServiceImpl implements RoleService {
 	public Map<String, Object> roleDel(Integer role_id, Map<String, Object> map) {
 		int result = roleMapper.delete(role_id);
 		if(result>0){
-			map.put("message", "successfully delete");
+			map.put("message", "successfully deleted");
 		}else {
 			map.put("message", "fail to delete");
 		}

@@ -38,7 +38,7 @@
         <input type="hidden" name="good_id" value="${good_id }">
         <br/><br/><br/><br/>
         <div align="center">
-            <div style="font-size: 40px">Confirm Delete？</div>
+            <div style="font-size: 40px">Confirm Deletion？</div>
         </div>
         <br/><br/><br/><br/>
         <div align="center">

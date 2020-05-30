@@ -15,10 +15,10 @@
       	 <input type="hidden" name="pages" id="pages">
 	      <div class="page">
 	        <div>
-	          <a class="num" href="javascript:jumpPage(1);">First Page</a>
-	          <a class="num" href="javascript:jumpPage(${(pages-1>0)?(pages-1):1 });">Previous Page</a>
-	          <a class="num" href="javascript:jumpPage(${(pages+1>sumPage)?sumPage:(pages+1) });">Next Page</a>
-	          <a class="num" href="javascript:jumpPage(${sumPage });">Last Page</a>
+	          <a class="num" href="javascript:jumpPage(1);">First</a>
+	          <a class="num" href="javascript:jumpPage(${(pages-1>0)?(pages-1):1 });">Previous</a>
+	          <a class="num" href="javascript:jumpPage(${(pages+1>sumPage)?sumPage:(pages+1) });">Next</a>
+	          <a class="num" href="javascript:jumpPage(${sumPage });">Last</a>
 	        </div>
 	      </div>
       </form>

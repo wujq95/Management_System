@@ -80,7 +80,7 @@
                 </form>
             </div>
             <xblock>
-                <button class="layui-btn" onclick="typeAdd()"><i class="layui-icon"></i>添加</button>
+                <button class="layui-btn" onclick="typeAdd()"><i class="layui-icon"></i>Add</button>
                 <span class="x-right" style="line-height:40px">Totally Number: ${count }</span>
             </xblock>
             <table class="layui-table">

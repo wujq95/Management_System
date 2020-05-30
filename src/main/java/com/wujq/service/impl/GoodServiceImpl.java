@@ -84,7 +84,7 @@ public class GoodServiceImpl implements GoodService {
     public Map<String, Object> goodDel(Integer good_id, Map<String, Object> map) {
         int result = goodMapper.delete(good_id);
         if(result>0){
-            map.put("message", "successfully delete");
+            map.put("message", "successfully deleted");
         }else {
             map.put("message", "fail to delete");
         }
