@@ -25,17 +25,15 @@ This is an Authority Management System based on SSM(Spring+SpringMVC+Mybatis). A
 4. 头像上传
 
 ## 数据库的表
+1. user
+2. role
 
 ## 截图和结构图
+1. qqq
 
 
 ## 要补的东西
 1. 功能写全
 2. 截图和结构图
 3. 再过两遍说明修改和补充
-
-## 其他
-1. 增加其他技术（SpringBoot, SpringSecurity/Shiro, Redis, Nignx,富文本编辑）
-2. 项目配置到云上面
-3. （四海兴唐框架整合+三阶段知识点）+（zhang13专栏+源码）+（zhang13SpringBoot知识+源码）+（其他项目代码）+（优达4）
 
