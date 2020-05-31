@@ -5,7 +5,7 @@
 This is an Authority Management System based on SSM(Spring+SpringMVC+Mybatis). Administrators are divided into three identities: manager, staff, and intern. Logging in with different identities has different authorities. After logging in, they can view and handle different tasks. An identity with role management authority can assign the authority of different types of employees, and all employees can add, delete, modify, fuzzy query, and batch delete the tasks within their authority.
 
 ## Technology
-1. Software Project Management：Maven
+1. Project Management：Maven
 2. IoC Container：Spring
 3. Web FrameWork：SpringMVC
 4. ORM FrameWork：Mybatis
