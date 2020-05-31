@@ -12,7 +12,7 @@
 	<head>
 		<base href="${basePath}">
 <meta charset="UTF-8">
-    <title>Delete Confirm</title>
+    <title>User Deletion</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />

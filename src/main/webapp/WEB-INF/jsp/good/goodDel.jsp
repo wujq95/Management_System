@@ -12,7 +12,7 @@
 	<head>
 		<base href="${basePath}">
 <meta charset="UTF-8">
-    <title>Good Delete</title>
+    <title>Good Deletion</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -25,7 +25,7 @@
     type="text/css" />
     <script>
     function closes() {
-        var dialog = top.dialog.get(window);//获取当前模态窗口
+        var dialog = top.dialog.get(window);
         dialog.close();
         dialog.remove();
         return false;

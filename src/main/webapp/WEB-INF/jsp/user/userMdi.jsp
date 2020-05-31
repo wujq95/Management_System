@@ -12,7 +12,7 @@
 	<head>
 		<base href="${basePath}">
 <meta charset="UTF-8">
-    <title>User Modify</title>
+    <title>User Modification</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -29,7 +29,7 @@
             <input type="hidden" name="user_id" value="${user.user_id }">
             <div class="layui-form-item">
                 <label for="user_account" class="layui-form-label">
-                    <span class="x-red">*</span>Portrait
+                    <span class="x-red">*</span>Avatar
                 </label>
                 <div class="layui-input-inline">
                     <input type="file" id="photo" name="photo"

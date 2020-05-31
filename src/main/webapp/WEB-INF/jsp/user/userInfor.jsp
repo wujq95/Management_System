@@ -24,7 +24,7 @@
 <body>
     <table class="layui-table" align="center">
         <tr align="center">
-            <td>Portrait</td>
+            <td>Avatar</td>
             <td><img width="50px" src="upload/${user.user_img }" /></td>
         </tr>
         <tr align="center">

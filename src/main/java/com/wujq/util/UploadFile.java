@@ -11,6 +11,13 @@ import java.util.UUID;
 
 public class UploadFile {
 
+    /**
+     * upload portrait method
+     * @param user
+     * @param photo
+     * @param request
+     * @throws IOException
+     */
     public static void upload(User user,MultipartFile photo, HttpServletRequest request) throws IOException {
         if(photo!=null&&photo.getOriginalFilename()!=null&&photo.getOriginalFilename()!=""){
             //define the photo upload path

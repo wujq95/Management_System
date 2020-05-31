@@ -116,7 +116,7 @@
                     <th>
                         <div class="layui-unselect header layui-form-checkbox" lay-skin="primary" id="demo"><i class="layui-icon">&#xe605;</i></div>
                     </th>
-                    <td>Portrait</td>
+                    <td>Avatar</td>
                     <td>Name</td>
                     <td>Account</td>
                     <td>Role</td>
