@@ -2,34 +2,21 @@
 
 
 ## Introduction
-这是一个基于SSM的权限管理系统，管理员分为超级管理员、经理和普通管理员三种身份，使用不同身份登陆具有不同的权限，登陆后可以查看和处理不同的工作。具有角色管理权限的身份可以对不同种类员工的权限进行分配，所有员工可以对自己权限内的表进行增删改查、模糊查询以及批量删除。
+This is an Authority Management System based on SSM(Spring+SpringMVC+Mybatis). Administrators are divided into three identities: manager, staff, and intern. Logging in with different identities has different authorities. After logging in, they can view and handle different tasks. An identity with role management authority can assign the authority of different types of employees, and all employees can add, delete, modify, fuzzy query, and batch delete the tasks within their authority.
 
-#### 超级管理员登陆账号：
-#### 超级管理员登陆密码：
+## Technology
+1. Project Management：Maven
+2. IoC Container：Spring
+3. Web FrameWork：SpringMVC
+4. ORM FrameWork：Mybatis
+5. Database：MySql
+6. Data Source: Druid
+7. Log Management: Log4j
+8. Front-end Framework: Layui
+5. IDE：IntelliJ IDEA
+6. JDK version：jdk1.8
+7. Tomcat version：Tomcat9.x
 
-#### 经理登陆账号：
-#### 经理登陆密码：
-
-#### 普通管理员登陆账号：
-#### 普通管理员登陆密码：
-
-## 运行环境和所需工具
-1. 编译器：IntelliJ IDEA
-2. 项目构建工具：Maven
-3. 数据库：Mysql
-4. JDK版本：jdk1.8
-5. Tomcat版本：Tomcat9.x
-
-## 技术栈
-1. IOC容器：Spring
-2. Web框架：SpringMVC
-3. ORM框架：Mybatis
-4. 数据库：MySql
-5. 安全框架：
-6. 分页插件：
-7. 数据源：Druid
-8. 日志：log4j
-9. 前端框架：Layui
 
 ## 功能
 1. 管理增删改查
@@ -37,15 +24,16 @@
 3. 权限分配
 4. 头像上传
 
+## 数据库的表
+1. user
+2. role
+
+## 截图和结构图
+1. qqq
+
 
 ## 要补的东西
-1. 把中文删除了
-2. 删、补、改注释
-3. 增加其他技术（SpringBoot, SpringSecurity/Shiro, Redis, Nignx,富文本编辑）
-4. 可以增加结构图、截图等
-5. 项目配置到云上面
-6. （四海兴唐框架整合+三阶段知识点）+（zhang13专栏+源码）+（zhang13SpringBoot知识+源码）+（其他项目代码）+（优达4）
+1. 功能写全
+2. 截图和结构图
+3. 再过两遍说明修改和补充
 
-## Log
-1. 2020-05-16 添加分页
-2. 2020-05-17 添加拦截器
