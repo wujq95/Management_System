@@ -32,7 +32,6 @@
     }
 </script>
   </head>
-
     <body>
     <form action="goodDelDo" method="post">
         <input type="hidden" name="good_id" value="${good_id }">
@@ -48,5 +47,4 @@
         <br/><br/>
     </form>
     </body>
-
 </html>
