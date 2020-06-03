@@ -29,7 +29,7 @@
 <body class="login-bg">
 
 <div class="login">
-    <div class="message">Manager Login</div>
+    <div class="message">Administrator Login</div>
     <div id="darkbannerwrap"></div>
 
     <form method="post" action="loginDo" class="layui-form" >
