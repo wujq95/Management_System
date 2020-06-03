@@ -12,7 +12,7 @@
 <head>
     <base href="${basePath}">
     <meta charset="UTF-8">
-    <title>Commodity Management System</title>
+    <title>Product Management System</title>
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -29,7 +29,7 @@
 <body class="login-bg">
 
 <div class="login">
-    <div class="message">Manager Login</div>
+    <div class="message">Administrator Login</div>
     <div id="darkbannerwrap"></div>
 
     <form method="post" action="loginDo" class="layui-form" >
